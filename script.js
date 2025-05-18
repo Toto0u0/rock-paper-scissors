@@ -18,7 +18,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    const userInput = parseInt(prompt("00000 for rock, 1 for paper or 2 for scissors?: "));
+    const userInput = parseInt(prompt("0 for rock, 1 for paper or 2 for scissors?: "));
     if (userInput === 0) {
         human = "rock";
         return human;

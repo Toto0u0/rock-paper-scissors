@@ -4,15 +4,32 @@ let gameCount = 0;
 
 
 function getComputerChoice() {
-    const cpu = Math.floor(Math.random() * 3);
-    return cpu;
+    const cpuChoice = Math.floor(Math.random() * 3);
+    if (cpuChoice === 0) {
+        cpu = "rock";
+        return cpu;
+    } else if (cpuChoice === 1) {
+        cpu = "paper";
+        return cpu;
+    } else if (cpuChoice === 2) {
+        cpu = "scissors";
+        return cpu;
+    }
 }
 
 function getHumanChoice() {
-    const userInput = parseInt(prompt("0 for rock, 1 for paper or 2 for scissors?: "));
-    human = userInput;
-    return human;
+    const userInput = parseInt(prompt("00000 for rock, 1 for paper or 2 for scissors?: "));
+    if (userInput === 0) {
+        human = "rock";
+        return human;
+    } else if (userInput === 1) {
+        human = "paper";
+        return human;
+    } else if (userInput === 2) {
+        human = "scissors";
+        return human;
     }
+}
 
 // console.log(`user choice ${getHumanChoice()}`);
 // console.log(`cpu choice ${getComputerChoice()}`);
@@ -24,36 +41,36 @@ function playRound(humanChoice, computerChoice) {
     humanSelection;
     computerSelection;
 
-    if (humanSelection === 0 && computerSelection === 0) {
+    if (humanSelection === "rock" && computerSelection === "rock") {
         console.log("tie");
         gameCount +=1;
-    } else if (humanSelection === 1 && computerSelection === 0) {
+    } else if (humanSelection === "paper" && computerSelection === "rock") {
         console.log("you win");
         humanScore += 1;
         gameCount +=1;
-    } else if (humanSelection === 0 && computerSelection === 1) {
+    } else if (humanSelection === "rock" && computerSelection === "paper") {
         console.log("you lose");
         computerScore +=1;
         gameCount +=1;
-    } else if (humanSelection === 1 && computerSelection === 1) {
+    } else if (humanSelection === "paper" && computerSelection === "paper") {
         console.log("tie");
         gameCount +=1;
-    } else if (humanSelection === 2 && computerSelection === 1) {
+    } else if (humanSelection === "scissors" && computerSelection === "paper") {
         console.log("you win");
         humanScore += 1;
         gameCount +=1;
-    } else if (humanSelection === 0 && computerSelection === 2) {
+    } else if (humanSelection === "rock" && computerSelection === "scissors") {
         console.log("you win");
         humanScore += 1;
         gameCount +=1;
-    } else if (humanSelection === 1 && computerSelection === 2) {
+    } else if (humanSelection === "paper" && computerSelection === "scissors") {
         console.log("you lose");
         computerScore +=1;
         gameCount +=1;
-    } else if (humanSelection === 2 && computerSelection === 2) {
+    } else if (humanSelection === "scissors" && computerSelection === "scissors") {
         console.log("tie");
         gameCount +=1;
-    } else if (humanSelection === 2 && computerSelection == 0) {
+    } else if (humanSelection === "scissors" && computerSelection == "rock") {
         console.log("you lose");
         computerScore +=1;
         gameCount +=1;

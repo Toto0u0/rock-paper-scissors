@@ -13,8 +13,8 @@ function getHumanChoice(userInput) {
     return userInput;
     }
 
-console.log(userInput);
-console.log(rndInt);
+console.log(`user choice ${userInput}`);
+console.log(`cpu choice ${rndInt}`);
 
 function playRound(humanChoice, computerChoice) {
     if (userInput === 0 && rndInt === 0) {
@@ -43,8 +43,10 @@ function playRound(humanChoice, computerChoice) {
         computerScore +=1;
     }
     console.log(`Score is ${humanScore} to ${computerScore}`);
+    getComputerChoice();
     userInput = parseInt(prompt("0 for rock, 1 for paper or 2 for scissors?: "));
-    
+    console.log(`user choice ${userInput}`);
+    console.log(`cpu choice ${rndInt}`);
 
 }
 const humanSelection = getHumanChoice();
